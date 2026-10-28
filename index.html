@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculadora de Notas</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #f1f5f9;
+        background: radial-gradient(
+            circle at top left,
+            #25215b,
+            transparent 45%
+          ),
+          linear-gradient(135deg, #080d1b, #111827);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 680px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      .logo {
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+        border-radius: 20px;
+        font-size: 30px;
+        background: linear-gradient(135deg, #6366f1, #9333ea);
+        box-shadow: 0 8px 30px #6366f133;
+      }
+
+      .header h1 {
+        font-size: clamp(26px, 5vw, 36px);
+        margin-bottom: 10px;
+        letter-spacing: -1px;
+      }
+
+      .header p {
+        color: #94a3b8;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .card {
+        padding: 28px;
+        border: 1px solid #ffffff12;
+        border-radius: 24px;
+        background: #111827d9;
+        box-shadow: 0 20px 60px #00000030;
+        backdrop-filter: blur(12px);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+
+      .card-header .icon {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 13px;
+        background: #6366f11a;
+        font-size: 21px;
+      }
+
+      .card-header h2 {
+        font-size: 19px;
+        margin-bottom: 5px;
+      }
+
+      .card-header p {
+        color: #94a3b8;
+        font-size: 13px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 26px;
+      }
+
+      .info-item {
+        padding: 17px;
+        border: 1px solid #ffffff0d;
+        border-radius: 16px;
+        background: #ffffff05;
+      }
+
+      .info-item .number {
+        display: block;
+        margin-bottom: 12px;
+        color: #a5b4fc;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .info-item h3 {
+        margin-bottom: 7px;
+        font-size: 15px;
+      }
+
+      .info-item p {
+        color: #94a3b8;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .divider {
+        height: 1px;
+        margin: 24px 0;
+        background: #ffffff12;
+      }
+
+      .notice {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 16px;
+        border: 1px solid #6366f133;
+        border-radius: 14px;
+        background: #6366f10d;
+      }
+
+      .notice span {
+        font-size: 20px;
+      }
+
+      .notice p {
+        color: #cbd5e1;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .notice strong {
+        color: #a5b4fc;
+      }
+
+      .footer {
+        margin-top: 22px;
+        text-align: center;
+        color: #64748b;
+        font-size: 12px;
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 16px;
+        }
+
+        .card {
+          padding: 20px;
+        }
+
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header h1 {
+          font-size: 27px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="header">
+        <div class="logo">📚</div>
+
+        <h1>Calculadora de Notas</h1>
+
+        <p>
+          Organize as notas, acompanhe as médias e confira o resultado
+          acadêmico.
+        </p>
+      </header>
+
+      <section class="card">
+        <div class="card-header">
+          <div class="icon">🎓</div>
+
+          <div>
+            <h2>Painel do estudante</h2>
+            <p>Resumo do cálculo de desempenho</p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-item">
+            <span class="number">01 / SEMESTRE</span>
+            <h3>Primeiro semestre</h3>
+            <p>Notas 1 e 2 para calcular a primeira média.</p>
+          </article>
+
+          <article class="info-item">
+            <span class="number">02 / SEMESTRE</span>
+            <h3>Segundo semestre</h3>
+            <p>Notas 3 e 4 para calcular a segunda média.</p>
+          </article>
+
+          <article class="info-item">
+            <span class="number">03 / RESULTADO</span>
+            <h3>Média geral</h3>
+            <p>Consulte o desempenho considerando as quatro notas.</p>
+          </article>
+
+          <article class="info-item">
+            <span class="number">04 / STATUS</span>
+            <h3>Situação acadêmica</h3>
+            <p>Confira se o estudante foi aprovado ou reprovado.</p>
+          </article>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="notice">
+          <span>💡</span>
+          <p>
+            <strong>Como funciona?</strong><br />
+            Ao abrir a calculadora, responda às perguntas para informar os dados
+            do aluno e suas notas. O resultado será exibido ao final.
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        Calculadora de Notas · Projeto de estudos em JavaScript
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
